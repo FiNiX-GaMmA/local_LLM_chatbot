@@ -9,9 +9,6 @@ fi
 # Set non-interactive frontend to avoid prompts from apt-get
 export DEBIAN_FRONTEND=noninteractive
 
-# Update system and install necessary packages
-apt-get update && apt-get install -y curl python3-pip
-
 # Attempt to install ollama if it's not already installed
 if ! command -v ollama >/dev/null 2>&1; then
     echo "ollama is not installed. Installing now."
@@ -26,13 +23,5 @@ if command -v ollama >/dev/null 2>&1; then
     ollama pull llama2
 else
     echo "Installation failed. ollama could not be installed."
-    exit 1
-fi
-
-# Install Python packages
-if [ -f "./requirements.txt" ]; then
-    pip install -r ./requirements.txt
-else
-    echo "requirements.txt file does not exist in the specified path."
     exit 1
 fi
