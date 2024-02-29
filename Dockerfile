@@ -19,7 +19,7 @@ WORKDIR /var/www
 #RUN chmod +x ./deploy/scripts/setup.sh
 #RUN ./deploy/scripts/setup.sh
 
-RUN curl -fsSL https://ollama.com/install.sh
+RUN curl -fsSL https://ollama.com/install.sh | sh
 RUN ollama serve
 RUN ollama pull llama2
 
