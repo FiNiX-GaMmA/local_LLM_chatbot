@@ -22,7 +22,7 @@ services:
     ports:
       - "${OLLAMA_PORT}:11434"  # Replace with "host_port:container_port" if your application needs to expose any ports.
     volumes:
-      - ollama:/root/.ollama  # Adjust this if your app directory structure is different.
+      - ./ollama:/root/.ollama  # Adjust this if your app directory structure is different.
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:${OLLAMA_PORT}"]
       interval: 30s
