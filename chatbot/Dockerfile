@@ -17,6 +17,8 @@ RUN pip install -r /var/www/requirements.txt
 COPY . /var/www/chatbot
 WORKDIR /var/www/chatbot
 
+COPY app.py /var/www/app.py
+
 EXPOSE 8007
 ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8007", "--server.address=0.0.0.0"]
 #ENTRYPOINT ["streamlit", "run", "--help", "--server.port=8007", "--server.address=0.0.0.0"]
