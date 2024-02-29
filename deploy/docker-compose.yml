@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  streamlit-app: # You can name your service whatever you like; "streamlit-app" is just a placeholder.
+    build:
+      context: .  # Assuming your Dockerfile is inside an 'app' directory.
+    ports:
+      - "8007:8007"  # Replace "8000:8000" with "host_port:container_port" if your application needs to expose any ports.
+    volumes:
+      - .:/var/www  # Adjust this if your app directory structure is different.
+    environment:
+      - STREAMLIT_SERVER_PORT=8007
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8007/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
