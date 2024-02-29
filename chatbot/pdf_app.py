@@ -39,11 +39,11 @@ if 'memory' not in st.session_state:
 if 'vectorstore' not in st.session_state:
     st.session_state.vectorstore = Chroma(persist_directory='jj',
                         embedding_function=OllamaEmbeddings(
-                            model="mistral:instruct")
+                            model="llama2")
                         )
 if 'llm' not in st.session_state:
     st.session_state.llm = Ollama(base_url="http://localhost:11434",
-                model="mistral:instruct",
+                model="llama2",
                 verbose=True,
                 callback_manager=CallbackManager(
                     [StreamingStdOutCallbackHandler()]),
@@ -83,7 +83,7 @@ if uploaded_file is not None:
             # Create and persist the vector store
             st.session_state.vectorstore = Chroma.from_documents(
                 documents=all_splits,
-                embedding=OllamaEmbeddings(model="mistral")
+                embedding=OllamaEmbeddings(model="llama2")
             )
             st.session_state.vectorstore.persist()
 
