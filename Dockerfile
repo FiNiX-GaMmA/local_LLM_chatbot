@@ -14,11 +14,9 @@ RUN pip install -r /var/www/requirements.txt
 
 
 # the .. is going to the move to the parent directory
-COPY chatbot /var/www/chatbot
-WORKDIR /var/www/chatbot
-
-COPY app.py /var/www/app.py
+COPY . /app
+WORKDIR /app
 
 EXPOSE 8007
-ENTRYPOINT ["python3", "run", "app.py", "--server.port=8007", "--server.address=0.0.0.0"]
+ENTRYPOINT ["", "run", "app.py", "--server.port=8007", "--server.address=0.0.0.0"]
 #ENTRYPOINT ["streamlit", "run", "--help", "--server.port=8007", "--server.address=0.0.0.0"]
