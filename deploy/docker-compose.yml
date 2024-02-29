@@ -1,4 +1,4 @@
-version: '3.8'
+version: '1.0'
 
 services:
   llm_chatbot-app: # You can name your service whatever you like; "streamlit-app" is just a placeholder.
