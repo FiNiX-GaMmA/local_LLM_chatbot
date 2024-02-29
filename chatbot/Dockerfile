@@ -15,7 +15,7 @@ RUN pip install -r /var/www/requirements.txt
 
 # the .. is going to the move to the parent directory
 COPY . /var/www
-WORKDIR /var/www/chatbot
+#WORKDIR /var/www/chatbot
 
 RUN ls -la
 
