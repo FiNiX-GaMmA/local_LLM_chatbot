@@ -9,6 +9,9 @@ fi
 # Set non-interactive frontend to avoid prompts from apt-get
 export DEBIAN_FRONTEND=noninteractive
 
+# Update system and install necessary packages
+apt-get update && apt-get install -y curl python3-pip
+
 # Attempt to install ollama if it's not already installed
 if ! command -v ollama >/dev/null 2>&1; then
     echo "ollama is not installed. Installing now."
