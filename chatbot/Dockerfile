@@ -9,7 +9,7 @@ RUN python3 -m pip install --upgrade \
 
 RUN apt-get update && apt-get install -y curl
 
-COPY chatbot/requirements.txt /var/www/requirements.txt
+COPY requirements.txt /var/www/requirements.txt
 RUN pip install -r /var/www/requirements.txt
 
 
@@ -21,4 +21,4 @@ RUN ls -la
 
 EXPOSE 8007
 #ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8007", "--server.address=0.0.0.0"]
-ENTRYPOINT ["streamlit", "run", "./chatbot/app.py","--server.port=8007", "--server.address=0.0.0.0"]
+ENTRYPOINT ["streamlit", "run", "./app.py","--server.port=8007", "--server.address=0.0.0.0"]
