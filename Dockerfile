@@ -12,10 +12,6 @@ RUN apt-get update && apt-get install -y curl
 COPY chatbot/requirements.txt /var/www/requirements.txt
 RUN pip install -r /var/www/requirements.txt
 
-RUN curl -fsSL https://ollama.com/install.sh | sh
-#RUN ollama serve
-RUN ollama pull llama2
-
 
 # the .. is going to the move to the parent directory
 COPY .. /var/www
