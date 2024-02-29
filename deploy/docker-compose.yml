@@ -13,3 +13,18 @@ services:
       interval: 30s
       timeout: 10s
       retries: 5
+
+
+  ollama-app:
+    container_name: ollama # You can name your service whatever you like; "streamlit-app" is just a placeholder.
+    build:
+      context: ../ollama # Assuming your Dockerfile is inside an 'ollama' directory.
+    ports:
+      - "${OLLAMA_PORT}:11434"  # Replace with "host_port:container_port" if your application needs to expose any ports.
+    volumes:
+      - ollama:/root/.ollama  # Adjust this if your app directory structure is different.
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:${OLLAMA_PORT}"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
