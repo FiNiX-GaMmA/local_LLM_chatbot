@@ -24,6 +24,7 @@ services:
       - "${STREAMLIT_PORT}:8007"  # Replace with "host_port:container_port" if your application needs to expose any ports.
     volumes:
       - .:/var/www  # Adjust this if your app directory structure is different.
+    restart: always
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:${STREAMLIT_PORT}/_stcore/health"]
       interval: 30s
