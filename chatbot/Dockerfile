@@ -9,12 +9,12 @@ RUN python3 -m pip install --upgrade \
 
 RUN apt-get update && apt-get install -y curl
 
-COPY chatbot/requirements.txt /var/www/requirements.txt
+COPY requirements.txt /var/www/requirements.txt
 RUN pip install -r /var/www/requirements.txt
 
 
 # the .. is going to the move to the parent directory
-COPY chatbot/ /var/www
+COPY . /var/www/chatbot
 WORKDIR /var/www/chatbot
 
 EXPOSE 8007
