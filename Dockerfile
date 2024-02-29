@@ -15,13 +15,7 @@ RUN pip install -r /var/www/requirements.txt
 
 # the .. is going to the move to the parent directory
 COPY . /var/www
-WORKDIR /var/www
-
-#RUN chmod +x ./deploy/scripts/setup.sh
-#RUN ./deploy/scripts/setup.sh
-
-
+#WORKDIR /var/www
 
 EXPOSE 8007
-
-ENTRYPOINT ["streamlit", "run", "pdf_app.py", "--server.port=8007", "--server.address=0.0.0.0"]
+ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8007", "--server.address=0.0.0.0"]
