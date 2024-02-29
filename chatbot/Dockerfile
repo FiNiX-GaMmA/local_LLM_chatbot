@@ -19,4 +19,4 @@ RUN pip3 install -r requirements.txt
 
 EXPOSE 8007
 
-ENTRYPOINT ["streamlit", "run", "pdf_app.py", "--server.port=8007", "--server.address=0.0.0.0"]
+ENTRYPOINT ["streamlit", "run", "chatbot/pdf_app.py", "--server.port=8007", "--server.address=0.0.0.0"]
