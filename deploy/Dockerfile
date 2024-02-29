@@ -12,9 +12,7 @@ COPY . /var/www
 
 WORKDIR /var/www
 
-RUN ls -la
-
-RUN pip3 install -r ./chatbot/requirements.txt
+RUN pip3 install -r chatbot/requirements.txt
 RUN chmod +x ./deploy/scripts/setup.sh
 
 RUN ./deploy/scripts/setup.sh
