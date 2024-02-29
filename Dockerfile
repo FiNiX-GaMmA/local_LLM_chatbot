@@ -12,10 +12,10 @@ COPY .. /var/www
 
 WORKDIR /var/www
 
-#RUN pip3 install -r ./chatbot/requirements.txt
-RUN pip3 install -r requirements.txt
-#RUN chmod +x ./deploy/scripts/setup.sh
-#RUN ./deploy/scripts/setup.sh
+RUN pip3 install -r ./chatbot/requirements.txt
+
+RUN chmod +x ./deploy/scripts/setup.sh
+RUN ./deploy/scripts/setup.sh
 
 EXPOSE 8007
 
