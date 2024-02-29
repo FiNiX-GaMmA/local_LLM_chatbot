@@ -10,6 +10,7 @@ fi
 export DEBIAN_FRONTEND=noninteractive
 
 # Update system and install necessary packages
+echo "Updating the system to eanle downloads"
 apt-get update && apt-get install -y curl python3-pip
 
 # Attempt to install ollama if it's not already installed
