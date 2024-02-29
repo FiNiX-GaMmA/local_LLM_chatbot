@@ -5,8 +5,9 @@ import datetime
 import streamlit as st
 import ollama
 
-OLLAMA_MODELS = ollama.list()
-st.write(OLLAMA_MODELS)
+# OLLAMA_MODELS = ollama.list()
+
+st.write(ollama.show('llama2'))
 
 
 
