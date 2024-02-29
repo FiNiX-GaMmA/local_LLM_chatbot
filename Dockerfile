@@ -18,4 +18,4 @@ COPY . /var/www
 WORKDIR /var/www/chatbot
 
 EXPOSE 8007
-ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8007", "--server.address=0.0.0.0"]
+ENTRYPOINT ["streamlit", "run", "pdf_app.py", "--server.port=8007", "--server.address=0.0.0.0"]
