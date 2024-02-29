@@ -6,7 +6,7 @@ import streamlit as st
 import ollama
 
 try:
-    OLLAMA_MODELS = ollama.list()["models"]
+    OLLAMA_MODELS = ollama.list()
 except Exception as e:
     st.warning("Please make sure Ollama is installed first. See https://ollama.ai for more details.")
     st.stop()
