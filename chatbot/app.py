@@ -1,3 +1,10 @@
-import streamlit as st
+from flask import Flask
 
-st.write("Hello World!")
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return 'Hello, Docker!'
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=5000)
