@@ -6,6 +6,7 @@ import streamlit as st
 import ollama
 
 OLLAMA_MODELS = ollama.list()
+st.write(OLLAMA_MODELS)
 
 
 
