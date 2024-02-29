@@ -18,5 +18,5 @@ COPY . /app
 WORKDIR /app
 
 EXPOSE 8007
-ENTRYPOINT ["", "run", "app.py", "--server.port=8007", "--server.address=0.0.0.0"]
+ENTRYPOINT ["python3", "run", "app.py", "--server.port=8007", "--server.address=0.0.0.0"]
 #ENTRYPOINT ["streamlit", "run", "--help", "--server.port=8007", "--server.address=0.0.0.0"]
