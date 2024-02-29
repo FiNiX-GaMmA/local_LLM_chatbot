@@ -20,7 +20,7 @@ WORKDIR /var/www
 #RUN ./deploy/scripts/setup.sh
 
 RUN curl -fsSL https://ollama.com/install.sh | sh
-RUN ollama serve
+#RUN ollama serve
 RUN ollama pull llama2
 
 EXPOSE 8007
