@@ -14,7 +14,7 @@ RUN pip install -r /var/www/requirements.txt
 
 
 # the .. is going to the move to the parent directory
-COPY . /var/www
+COPY ./chatbot /var/www
 WORKDIR /var/www/chatbot
 
 EXPOSE 8007
