@@ -19,6 +19,6 @@ RUN ls -la
 #
 #RUN /var/www/deploy/scripts/setup.sh
 #
-#EXPOSE 8007
-#
-#ENTRYPOINT ["streamlit", "run", "chatbot/app.py", "--server.port=8007", "--server.address=0.0.0.0"]
+EXPOSE 8007
+
+ENTRYPOINT ["streamlit", "run", "chatbot/app.py", "--server.port=8007", "--server.address=0.0.0.0"]
