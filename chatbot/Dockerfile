@@ -15,10 +15,10 @@ RUN pip install -r /var/www/requirements.txt
 
 # the .. is going to the move to the parent directory
 COPY . /var/www
-WORKDIR /var/www/chatbot
+WORKDIR /var/www/chatbot/
 
 EXPOSE 8007
 #ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8007", "--server.address=0.0.0.0"]
 
 # Run app.py when the container launches
-ENTRYPOINT ["python", "./app.py","--server.port=8007", "--server.address=0.0.0.0"]
+ENTRYPOINT ["python", "app.py","--server.port=8007", "--server.address=0.0.0.0"]
