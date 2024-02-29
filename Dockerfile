@@ -9,16 +9,16 @@ RUN python3 -m pip install --upgrade \
 
 RUN apt-get update && apt-get install -y curl
 
-COPY requirements.txt /var/www/requirements.txt
+COPY chatbot/requirements.txt /var/www/requirements.txt
 RUN pip install -r /var/www/requirements.txt
 
 
 # the .. is going to the move to the parent directory
-COPY . /var/www/chatbot
+COPY chatbot /var/www/chatbot
 WORKDIR /var/www/chatbot
 
 COPY app.py /var/www/app.py
 
 EXPOSE 8007
-ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8007", "--server.address=0.0.0.0"]
+ENTRYPOINT ["python3", "run", "app.py", "--server.port=8007", "--server.address=0.0.0.0"]
 #ENTRYPOINT ["streamlit", "run", "--help", "--server.port=8007", "--server.address=0.0.0.0"]

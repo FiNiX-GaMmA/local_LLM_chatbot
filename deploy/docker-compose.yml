@@ -19,7 +19,7 @@ services:
   llm_chatbot-app:
     container_name: streamlit-app # You can name your service whatever you like; "" is just a placeholder.
     build:
-      context: ../chatbot # Assuming your Dockerfile is inside an 'app' directory.
+      context: ../ # Assuming your Dockerfile is inside an 'root' directory.
     ports:
       - "${STREAMLIT_PORT}:8007"  # Replace with "host_port:container_port" if your application needs to expose any ports.
     volumes:
