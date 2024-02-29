@@ -8,7 +8,7 @@ RUN python3 -m pip install --upgrade \
     setuptools \
     wheel
 # the .. is going to the move to the parent directory
-COPY ../.. /var/www
+COPY .. /var/www
 
 WORKDIR /var/www
 
