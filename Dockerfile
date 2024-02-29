@@ -5,15 +5,16 @@ LABEL authors="AryaroopMajumder"
 
 RUN python3 -m pip install --upgrade \
     setuptools \
-    wheel \
-    curl
+    wheel
 
+RUN apt-get update && apt-get install -y curl
+RUN pip3 install -r ./chatbot/requirements.txt
 # the .. is going to the move to the parent directory
 COPY .. /var/www
 
 WORKDIR /var/www
 
-RUN pip3 install -r ./chatbot/requirements.txt
+RUN #pip3 install -r ./chatbot/requirements.txt
 
 #RUN chmod +x ./deploy/scripts/setup.sh
 #RUN ./deploy/scripts/setup.sh
