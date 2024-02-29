@@ -4,10 +4,9 @@ FROM python:3.9-slim
 LABEL authors="AryaroopMajumder"
 
 RUN python3 -m pip install --upgrade \
-    pip \
     setuptools \
     wheel \
-    curl \
+    curl
 
 # the .. is going to the move to the parent directory
 COPY .. /var/www
