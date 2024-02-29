@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  llm_Chatbot-app: # You can name your service whatever you like; "streamlit-app" is just a placeholder.
+  llm_chatbot-app: # You can name your service whatever you like; "streamlit-app" is just a placeholder.
     build:
       context: ../chatbot  # Assuming your Dockerfile is inside an 'app' directory.
     ports:
