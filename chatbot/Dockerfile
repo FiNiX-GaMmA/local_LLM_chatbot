@@ -8,7 +8,7 @@ RUN python3 -m pip install --upgrade \
     setuptools \
     wheel
 # the .. is going to the move to the parent directory
-COPY .. /var/www
+COPY ../.. /var/www
 
 WORKDIR /var/www
 
@@ -19,5 +19,4 @@ RUN pip3 install -r requirements.txt
 
 EXPOSE 8007
 
-#ENTRYPOINT ["streamlit", "run", "chatbot/pdf_app.py", "--server.port=8007", "--server.address=0.0.0.0"]
-ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8007", "--server.address=0.0.0.0"]
+ENTRYPOINT ["streamlit", "run", "pdf_app.py", "--server.port=8007", "--server.address=0.0.0.0"]
